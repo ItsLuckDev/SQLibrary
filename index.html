@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLibrary</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Librerie per il terminale-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="bgTable">
+        <img src="img/Table.png" alt="bgTable">
+    </div>
+
+    <div class="terminal-container">
+        <form action="">
+            <div class="editor">
+              <pre aria-hidden="true"><code id="highlight" class="hljs"></code></pre>
+              <textarea id="input" spellcheck="false" placeholder="SELECT * FROM utenti;"></textarea>
+            </div>
+            <button class="verifica">&#9658; Verifica </button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* === STILE DELL'INTERA PAGINA === */
+body {
+    background-image: url("img/Library.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgTable {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(15%); /* nasconde il 15% inferiore del tavolo */
+    z-index: 1; /* porta avanti il tavolo in modo che il cliente rimanga sempre dietro*/
+}
+
+.bgTable img {
+    display: block;
+    width: 100%;
+}
+
+
+/* === TERMINALE === */
+.terminal-container
+{
+    position: relative;
+    width: 870px;
+    height: 652px; /* proporzioni di bgTerminal.png (1448x1086) */
+    background: url("img/bgTerminal.png") center / 100% 100% no-repeat;
+    z-index: 2;
+}
+
+.verifica
+{
+    position: absolute;
+    width: 296px;
+    height: 74px;
+    top: 466px;
+    left: 287px; /* centrato: (870 - 296) / 2 */
+    border-radius: 999px;
+    background: linear-gradient(#648A30, #33491F);
+    box-shadow: inset 0 2px 0 #8FBE48; /* riflesso in alto */
+    border: 3px solid #F6A716;
+    font-size: 28px;
+    color: #F4AC69;
+}
+
+.editor
+{
+    position: absolute;
+    width: 670px;
+    height: 298px;
+    top: 149px;
+    left: 100px; /* centrato: (870 - 670) / 2 */
+    background: #1e1e1e;
+    border: 2px solid #F8BA6C;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Textarea e pre devono avere metriche identiche per allinearsi */
+.editor textarea,
+.editor pre
+{
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 12px;
+    border: none;
+    font: 19px/1.5 "Fira Code", Consolas, monospace;
+    white-space: pre;
+    overflow: auto;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+/* .hljs serve a battere "pre code.hljs { padding: 1em }" del tema, caricato dopo */
+.editor pre code.hljs
+{
+    padding: 0;
+    background: transparent;
+    font: inherit;
+}
+
+.editor textarea
+{
+    color: transparent;
+    background: transparent;
+    caret-color: #eee;
+    resize: none;
+    outline: none;
+}
