@@ -16,8 +16,16 @@ input.addEventListener("input", () => {
 });
 
 /* === VERIFICA === */
-document.getElementById("verifica").addEventListener("click", () => {
-    console.log("Qui ci vuole una fetch POST verso il server");
-    console.log("Il server deve interrogare il BD con la query e facciamo il confronto tra tabelle, non tra query");
-    console.log("Infatti si può ricevere la stessa tabella mediante query diverse")
+document.getElementById("verifica").addEventListener("click", async () => {
+  
+  // manda al server la query dell'utente
+  const resp = await fetch("server.php", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      query: input.value
+    })
+  });
+  
+  console.log(await resp.text()); //contiene la query dopo essere passata dal server
 })

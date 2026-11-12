@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
     
     <!-- Librerie per il terminale-->
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="bgTable">
@@ -22,7 +22,7 @@
               <pre aria-hidden="true"><code id="highlight" class="hljs"></code></pre>
               <textarea id="input" spellcheck="false" placeholder="SELECT * FROM utenti;"></textarea>
             </div>
-            <button class="verifica">&#9658; Verifica </button>
+            <button type="button" class="verifica" id="verifica">&#9658; Verifica </button>
         </form>
     </div>
 
