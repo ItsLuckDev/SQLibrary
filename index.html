@@ -5,31 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQLibrary</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Librerie per il terminale-->
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 <body>
-    <div class="bgTable">
-        <!-- img src="img/Table.png" alt="bgTable"-->
-    </div>
+    <main class="frame">
 
-    <div class="terminal-container">
-        <form action="">
+        <header class="top">
+            <h1>📖 Assistente della Bibliotecaria</h1>
+            <div class="badge">⭐ Livello 1</div>
+            <div class="badge">🏆 Punteggio: 0</div>
+            <div class="badge">❤️ Tentativi: 3</div>
+        </header>
 
-            <div class="output">
-                <div id="outputTable"></div>
+        <section class="box cliente">
+            <h2>👥 Richiesta del Cliente</h2>
+            <div class="dialog">
+                <div class="avatar">🧑</div>
+                <p class="bubble">Cerco i libri di fantascienza pubblicati dopo il 2018, ordinati per titolo.</p>
             </div>
+        </section>
 
+        <section class="box terminale">
+            <h2>&gt;_ Terminale SQL</h2>
             <div class="editor">
-              <pre aria-hidden="true"><code id="highlight" class="hljs"></code></pre>
-              <textarea id="input" spellcheck="false" placeholder="SELECT * FROM utenti;">SELECT *</textarea>
+                <pre aria-hidden="true"><code id="highlight" class="hljs"></code></pre>
+                <textarea id="input" spellcheck="false" placeholder="SELECT * FROM utenti;">SELECT *</textarea>
             </div>
-            <button type="button" class="verifica" id="verifica">&#9658; Verifica </button>
-        </form>
-    </div>
+        </section>
 
+        <section class="box suggerimento">
+            <h2>💡 Suggerimento della Bibliotecaria</h2>
+            <div class="dialog">
+                <img class="avatar" src="img/granny.png" alt="Bibliotecaria">
+                <p class="bubble">Suggerimento: ti serviranno <b>SELECT, WHERE</b> e <b>ORDER BY</b>.</p>
+            </div>
+        </section>
+
+        <section class="box risultato">
+            <h2>▦ Risultato query</h2>
+            <div id="outputTable">
+                <table>
+                    <tr><th>Titolo</th><th>Autore</th><th>Anno</th></tr>
+                </table>
+            </div>
+        </section>
+
+        <nav class="buttons">
+            <button type="button" class="btn green">&#9658; Esegui</button>
+            <button type="button" class="btn green" id="verifica">&#10004; Verifica</button>
+            <button type="button" class="btn">📖 Manuale SQL</button>
+            <button type="button" class="btn">🛢 Schema DB</button>
+        </nav>
+
+        <footer class="concetti">🎓 Concetti del livello: SELECT • WHERE • ORDER BY</footer>
+
+    </main>
 </body>
 </html>
