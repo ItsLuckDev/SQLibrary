@@ -13,14 +13,19 @@
 </head>
 <body>
     <div class="bgTable">
-        <img src="img/Table.png" alt="bgTable">
+        <!-- img src="img/Table.png" alt="bgTable"-->
     </div>
 
     <div class="terminal-container">
         <form action="">
+
+            <div class="output">
+                <div id="outputTable"></div>
+            </div>
+
             <div class="editor">
               <pre aria-hidden="true"><code id="highlight" class="hljs"></code></pre>
-              <textarea id="input" spellcheck="false" placeholder="SELECT * FROM utenti;"></textarea>
+              <textarea id="input" spellcheck="false" placeholder="SELECT * FROM utenti;">SELECT *</textarea>
             </div>
             <button type="button" class="verifica" id="verifica">&#9658; Verifica </button>
         </form>

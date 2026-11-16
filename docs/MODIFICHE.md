@@ -1,3 +1,5 @@
+[LUCA e LORENZO - 16/11/26]: abbiamo sistemato il server e implementato un db, adesso esegue correttamente le query e restituisce in formato JSON il risultato dell'interrogazione. Lato JS non facciamo più una distinzione tra fetch post e fetch get ma leggiamo direttamente la response della POST. Il prossimo passo è quello di formattare correttamente l'output in modo da mostrare una tabella corretta. In HTML ho già messo il div che conterrà il risultato.
+
 [LUCA - 12/11/26]: ho implementato la fetch che manda la query al server. Al momento non succede nulla di ché, semplicemente la query viene mandata al server e questi la rimbalza alla pagina che stampa la query mediante `console.log`.
 Ho fatto così in modo da controllare se la query viene passata con efficienza al server.
 

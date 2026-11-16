@@ -17,15 +17,9 @@ input.addEventListener("input", () => {
 
 /* === VERIFICA === */
 document.getElementById("verifica").addEventListener("click", async () => {
-  
-  // manda al server la query dell'utente
   const resp = await fetch("server.php", {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      query: input.value
-    })
+    body: JSON.stringify({ query: input.value })
   });
-  
-  console.log(await resp.text()); //contiene la query dopo essere passata dal server
-})
+  console.log(await resp.json());
+});
