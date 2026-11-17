@@ -20,12 +20,21 @@ body {
     color: var(--testo);
 }
 
+/* === SCENA: cliente | quadro | bibliotecaria === */
+.scena {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 220px;
+    align-items: center;
+    gap: 24px;
+    width: 95vw;
+}
+
 /* === CORNICE PRINCIPALE (griglia a 2 colonne) === */
 .frame {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 0.7fr;
     gap: 16px;
-    width: min(1100px, 95vw);
+    width: auto;
     padding: 24px 32px;
     background: rgba(58, 18, 34, 0.95);
     border: 4px solid var(--oro);
@@ -76,6 +85,8 @@ h2 {
 }
 
 /* === DIALOGHI (cliente / bibliotecaria) === */
+.cliente .dialog, .suggerimento .dialog { flex-direction: column; }
+
 .dialog {
     display: flex;
     align-items: center;
@@ -105,12 +116,18 @@ h2 {
     font: 18px/1.3 sans-serif;
 }
 
+.bubble.hint{ display: none; }
+
 .bubble b { color: #8a1f2a; }
 
 /* === TERMINALE === */
+/* il terminale si allunga fino all'altezza della tabella */
+.terminale { display: flex; flex-direction: column; }
+
 .editor {
     position: relative;
-    height: 150px;
+    flex: 1;
+    min-height: 150px;
     background: #1e1e1e;
 }
 
@@ -127,11 +144,14 @@ h2 {
     overflow: auto;
     box-sizing: border-box;
     scrollbar-width: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 /* .hljs serve a battere "pre code.hljs { padding: 1em }" del tema, caricato dopo */
 .editor pre code.hljs {
     padding: 0;
+    overflow: visible; /* il tema mette overflow-x: auto: deve scorrere il <pre>, non il <code> */
     background: transparent;
     font: inherit;
 }
@@ -203,6 +223,6 @@ td { background: #2a0e18; }
 
 /* === SCHERMI STRETTI: una colonna === */
 @media (max-width: 800px) {
-    .frame { grid-template-columns: 1fr; }
+    .scena, .frame { grid-template-columns: 1fr; }
     .top, .buttons { flex-wrap: wrap; }
 }

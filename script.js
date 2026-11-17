@@ -15,6 +15,17 @@ input.addEventListener("input", () => {
   code.innerHTML = hljs.highlight(testo, { language: "sql" }).value;
 });
 
+
+/* === SUGGERIMENTO === */
+const hintBtn = document.getElementById("hintBtn");
+hintBtn.addEventListener("click", async () => {
+  hintBtn.style.display = "none";
+  const hint = document.getElementById("hint");
+  hint.textContent = "Inserire qui il suggerimento per il livello"; //da cambiare con il suggerimento restituito dal DB
+  hint.style.display = "block";
+
+})
+
 /* === VERIFICA === */
 document.getElementById("verifica").addEventListener("click", async () => {
   const resp = await fetch("server.php", {
