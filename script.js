@@ -26,8 +26,8 @@ hintBtn.addEventListener("click", async () => {
 
 })
 
-/* === VERIFICA === */
-document.getElementById("verifica").addEventListener("click", async () => {
+/* === ESEGUI === */
+document.getElementById("esegui").addEventListener("click", async () => {
   const resp = await fetch("server.php", {
     method: "POST",
     body: JSON.stringify({ query: input.value })
