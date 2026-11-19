@@ -26,12 +26,8 @@ hintBtn.addEventListener("click", async () => {
 })
 
 /* === CLIENTE RANDOM === */
-const avatarClienti = [
-  "img/customers/Cleinte2.png",
-  "img/customers/Cleinte3.png",
-  "img/customers/Cliente1.png",
-  "img/customers/Cliente4.png"
-]
+let avatarClienti = [];
+for (let i = 1; i <= 13; i++) avatarClienti.push(`img/customers/Cliente${i}.png`);
 
 const avatar = document.getElementById("customer");
 avatar.src = avatarClienti[Math.floor(Math.random() * avatarClienti.length)];
@@ -39,14 +35,16 @@ avatar.src = avatarClienti[Math.floor(Math.random() * avatarClienti.length)];
 
 /* === ESEGUI === */
 document.getElementById("esegui").addEventListener("click", async () => {
+  const tabella = document.querySelector("table");
+  tabella.replaceChildren(); // svuota il risultato precedente
+  if (!input.value) return; // terminale vuoto: tabella vuota, niente richiesta al server
+
   const resp = await fetch("server.php", {
     method: "POST",
     body: JSON.stringify({ query: input.value })
   });
 
   const righe = await resp.json();
-  const tabella = document.getElementById("resTable");
-  tabella.replaceChildren(); // svuota il risultato precedente
 
   // {errore: ...} oppure {ok: true}: non è una tabella
   if (!Array.isArray(righe)) { tabella.insertRow().insertCell().textContent = righe.errore ?? "Query eseguita"; return; }
@@ -62,4 +60,14 @@ document.getElementById("esegui").addEventListener("click", async () => {
     const tr = tabella.insertRow(); // finisce in un <tbody> creato in automatico
     chiavi.forEach(k => tr.insertCell().textContent = riga[k]);
   });
+});
+
+
+/* === INFOBOX (tabella risultante)=== */
+const infoBox = document.getElementById("infoBox");
+document.getElementById("outputTable").addEventListener("click", () => {
+  const preview = document.querySelector("#outputTable table");
+  if (!preview.rows.length) return; // niente da mostrare prima di "Esegui"
+  infoBox.querySelector(".resTable").innerHTML = preview.innerHTML;
+  infoBox.showModal();
 });

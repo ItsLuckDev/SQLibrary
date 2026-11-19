@@ -114,6 +114,7 @@ h2 {
     background: var(--crema);
     color: #3a1a12;
     font: 18px/1.3 sans-serif;
+    overflow-wrap: break-word; /* parole lunghe vanno a capo invece di uscire dal dialog */
 }
 
 .bubble.hint{ display: none; }
@@ -172,7 +173,15 @@ h2 {
     scrollbar-width: none; /* scorre ancora con rotella/trackpad/touch */
 }
 
-.outputTable { cursor: zoom-in; }
+/* preview: la tabella entra nel riquadro (colonne strette, righe in eccesso tagliate); la versione completa è nell'infoBox */
+.risultato .outputTable { overflow: hidden; cursor: zoom-in; }
+.risultato table { table-layout: fixed; font-size: 14px; }
+.risultato th, .risultato td {
+    padding: 4px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .infoBox {
     width: min(90vw, 1000px);
@@ -182,7 +191,6 @@ h2 {
 .infoBox::backdrop { background: rgba(0, 0, 0, 0.6); }
 .infoBox .outputTable { max-height: 70vh; }
 .infoBox form { padding: 12px; }
-Togli anche la regola .resTable { display: grid; place-items: center; height: 10vh; }
 
 
 table {
