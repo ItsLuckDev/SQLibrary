@@ -27,20 +27,32 @@
         <main class="frame">
 
             <header class="top">
-                <h1>📖 Assistente della Bibliotecaria</h1>
+                <h1> Assistente della Bibliotecaria</h1>
                 <div class="badge">⭐ Livello 1</div>
                 <div class="badge">🏆 Punteggio: 0</div>
                 <div class="badge">❤️ Tentativi: 3</div>
             </header>
 
             <section class="box risultato">
-                <h2>▦ Risultato query</h2>
+                <h2>▦ Preview query</h2>
                 <div id="outputTable" class="outputTable">
-                    <table id="resTable"> </table>
+                    <table></table> <!-- preview della tabella risultante -->
                 </div>
             </section>
 
+
+            <dialog id="infoBox" class="infoBox box">
+                <h2>▦ Tabella completa</h2>
+                <div class="outputTable">
+                    <table class="resTable"></table>
+                </div>
+                <!--PLACEHOLDER: Manuale -->
+                <!--PLACEHOLDER: Schema -->
+                <form method="dialog"><button class="btn">Chiudi</button></form>
+            </dialog>
             
+
+
             <section class="box terminale">
                 <h2>&gt;_ Terminale SQL</h2>
                 <div class="editor">
@@ -52,7 +64,7 @@
             <nav class="buttons">
                 <button type="button" class="btn green" id="esegui">&#9658; Esegui</button>
                 <button type="button" class="btn green" id="verifica">&#10004; Verifica</button>
-                <button type="button" class="btn">📖 Manuale SQL</button>
+                <button type="button" class="btn"> Manuale SQL</button>
                 <button type="button" class="btn">🛢 Schema DB</button>
             </nav>
             
@@ -62,7 +74,7 @@
         
         
         <section class="box cliente">
-            <h2>👥 Richiesta del Cliente</h2>
+            <h2>Richiesta del Cliente</h2>
             <div class="dialog">
                 <img class="avatar" id="customer">🧑</div>
                 <p class="bubble">Cerco i libri di fantascienza pubblicati dopo il 2018, ordinati per titolo.</p>

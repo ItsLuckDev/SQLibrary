@@ -44,7 +44,6 @@ body {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
-
 .top, .buttons, .concetti { grid-column: 1 / -1; }
 
 /* === INTESTAZIONE === */
@@ -172,6 +171,19 @@ h2 {
     overflow: auto; /* la tabella scorre dentro il suo riquadro */
     scrollbar-width: none; /* scorre ancora con rotella/trackpad/touch */
 }
+
+.outputTable { cursor: zoom-in; }
+
+.infoBox {
+    width: min(90vw, 1000px);
+    padding: 0;
+    color: var(--testo); /* il dialog di default ha il testo nero */
+}
+.infoBox::backdrop { background: rgba(0, 0, 0, 0.6); }
+.infoBox .outputTable { max-height: 70vh; }
+.infoBox form { padding: 12px; }
+Togli anche la regola .resTable { display: grid; place-items: center; height: 10vh; }
+
 
 table {
     width: 100%;
