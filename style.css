@@ -32,7 +32,7 @@ body {
 /* === CORNICE PRINCIPALE (griglia a 2 colonne) === */
 .frame {
     display: grid;
-    grid-template-columns: 1fr 0.7fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); /* minmax(0,..): una tabella larga non allarga il frame */
     gap: 16px;
     width: auto;
     padding: 24px 32px;
@@ -43,6 +43,7 @@ body {
     border-radius: 24px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
 }
+
 
 .top, .buttons, .concetti { grid-column: 1 / -1; }
 
@@ -165,13 +166,19 @@ h2 {
 }
 
 /* === TABELLA RISULTATI === */
-#outputTable { padding: 12px; }
+.outputTable {
+    padding: 12px;
+    max-height: 40vh;
+    overflow: auto; /* la tabella scorre dentro il suo riquadro */
+    scrollbar-width: none; /* scorre ancora con rotella/trackpad/touch */
+}
 
 table {
     width: 100%;
     border-collapse: collapse;
     border: 2px solid var(--oro);
     font: 17px sans-serif;
+    scrollbar-width: none;
 }
 
 th, td {
@@ -181,6 +188,8 @@ th, td {
 }
 
 th {
+    position: sticky; /* intestazione visibile durante lo scroll */
+    top: 0;
     background: var(--verde);
     color: var(--crema);
 }
@@ -223,6 +232,6 @@ td { background: #2a0e18; }
 
 /* === SCHERMI STRETTI: una colonna === */
 @media (max-width: 800px) {
-    .scena, .frame { grid-template-columns: 1fr; }
+    .scena, .frame { grid-template-columns: minmax(0, 1fr); }
     .top, .buttons { flex-wrap: wrap; }
 }

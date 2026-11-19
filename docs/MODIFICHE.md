@@ -1,3 +1,8 @@
+[LUCA - 19/11/26]: I clienti vengono mostrati randomicamente.
+Agggiunto il suggerimento della bibliotecaria (al momento è un placeholder che andrà gestito server-side).
+Spostato il bottone di esecuzione da "Verifica" ad "Esegui" (prima se premevi esegui non succedeva niente).
+Recupero dei dati dal server in formato JSON e conversione al formato opportuno per essere intabellati (DA RIVEDERE: i dati vengono forniti in maniera errata).
+
 [LUCA e LORENZO - 16/11/26]: abbiamo sistemato il server e implementato un db, adesso esegue correttamente le query e restituisce in formato JSON il risultato dell'interrogazione. Lato JS non facciamo più una distinzione tra fetch post e fetch get ma leggiamo direttamente la response della POST. Il prossimo passo è quello di formattare correttamente l'output in modo da mostrare una tabella corretta. In HTML ho già messo il div che conterrà il risultato.
 
 [LUCA - 12/11/26]: ho implementato la fetch che manda la query al server. Al momento non succede nulla di ché, semplicemente la query viene mandata al server e questi la rimbalza alla pagina che stampa la query mediante `console.log`.

@@ -35,18 +35,17 @@
 
             <section class="box risultato">
                 <h2>▦ Risultato query</h2>
-                <div id="outputTable">
-                    <table>
-                        <tr><th>Titolo</th><th>Autore</th><th>Anno</th></tr>
-                    </table>
+                <div id="outputTable" class="outputTable">
+                    <table id="resTable"> </table>
                 </div>
             </section>
 
+            
             <section class="box terminale">
                 <h2>&gt;_ Terminale SQL</h2>
                 <div class="editor">
                     <pre aria-hidden="true"><code id="highlight" class="hljs"></code></pre>
-                    <textarea id="input" spellcheck="false" placeholder="SELECT * FROM Autori;">SELECT * FROM Autori;</textarea>
+                    <textarea id="input" spellcheck="false" placeholder="SELECT * FROM Autori;">SELECT * FROM Autori JOIN Libri;</textarea>
                 </div>
             </section>
 
@@ -65,7 +64,7 @@
         <section class="box cliente">
             <h2>👥 Richiesta del Cliente</h2>
             <div class="dialog">
-                <div class="avatar">🧑</div>
+                <img class="avatar" id="customer">🧑</div>
                 <p class="bubble">Cerco i libri di fantascienza pubblicati dopo il 2018, ordinati per titolo.</p>
             </div>
         </section>
