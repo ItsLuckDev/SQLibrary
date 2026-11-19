@@ -41,7 +41,7 @@ document.getElementById("esegui").addEventListener("click", async () => {
 
   const resp = await fetch("server.php", {
     method: "POST",
-    body: JSON.stringify({ query: input.value })
+    body: JSON.stringify({ query: input.value.toLowerCase() })
   });
 
   const righe = await resp.json();
