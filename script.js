@@ -65,30 +65,21 @@ document.getElementById("esegui").addEventListener("click", async () => {
 
 /* === INFOBOX (tabella risultante)=== */
 const infoBox = document.getElementById("infoBox");
+const tabellaInfo = document.getElementById("tabellaInfo");
+const schemaFrame = document.getElementById("schemaFrame");
+
 document.getElementById("outputTable").addEventListener("click", () => {
   const preview = document.querySelector("#outputTable table");
   if (!preview.rows.length) return; // niente da mostrare prima di "Esegui"
   infoBox.querySelector(".resTable").innerHTML = preview.innerHTML;
+  tabellaInfo.hidden = false;
+  schemaFrame.hidden = true;
   infoBox.showModal();
 });
 
-//BZ: Parte dedicata al box dello schemadb e al bottone di chiusuda di esso-->
-
-const schemaBtn = document.getElementById("schemaBtn");
-const chiudiSchema = document.getElementById("chiudiSchema");
-
-const contenutoFrame = document.getElementById("contenutoFrame");
-const schemaFrame = document.getElementById("schemaFrame");
-
-// mostra lo schema
-schemaBtn.addEventListener("click", () => {
-    contenutoFrame.hidden = true;
-    schemaFrame.hidden = false;
-    console.log("AAA");
-});
-
-// torna alla schermata principale come un codardo
-chiudiSchema.addEventListener("click", () => {
-    schemaFrame.hidden = true;
-    contenutoFrame.hidden = false;
+// BZ: lo schema DB si apre nella stessa infoBox, al posto della tabella
+document.getElementById("schemaBtn").addEventListener("click", () => {
+  tabellaInfo.hidden = true;
+  schemaFrame.hidden = false;
+  infoBox.showModal();
 });
