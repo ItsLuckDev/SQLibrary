@@ -55,6 +55,62 @@
                         </div>
                     </div>
                     <!--PLACEHOLDER: Manuale -->
+                    <!-- Manuale -->
+<div id="manualeFrame" class="manualeFrame" hidden>
+    <h2>📖 Manuale SQL</h2>
+    <div class="manualeContenuto">
+
+        <details open>
+            <summary>SELECT: scegliere cosa vedere</summary>
+            <p>Serve per mostrare i dati di una tabella.</p>
+            <pre>SELECT * FROM autori;</pre>
+            <p>L'asterisco <b>*</b> significa "tutte le colonne". Per vedere solo alcune colonne, scrivile separate da virgola:</p>
+            <pre>SELECT nome, cognome FROM autori;</pre>
+        </details>
+
+        <details>
+            <summary>WHERE: filtrare le righe</summary>
+            <p>Mostra solo le righe che rispettano una condizione.</p>
+            <pre>SELECT * FROM libri WHERE anno &gt; 2018;</pre>
+            <p>Puoi usare: <b>=</b> (uguale), <b>&lt;&gt;</b> (diverso), <b>&gt;</b>, <b>&lt;</b>, <b>&gt;=</b>, <b>&lt;=</b>.</p>
+            <p>Il testo va scritto tra apici:</p>
+            <pre>SELECT * FROM libri WHERE genere = 'fantascienza';</pre>
+        </details>
+
+        <details>
+            <summary>ORDER BY: ordinare i risultati</summary>
+            <p>Ordina le righe. Di default l'ordine è crescente (<b>ASC</b>); con <b>DESC</b> diventa decrescente.</p>
+            <pre>SELECT * FROM libri ORDER BY titolo;
+SELECT * FROM libri ORDER BY anno DESC;</pre>
+        </details>
+
+        <details>
+            <summary>AND, OR, NOT: più condizioni insieme</summary>
+            <pre>SELECT * FROM libri WHERE genere = 'fantascienza' AND anno &gt; 2018;</pre>
+            <p><b>AND</b>: devono valere entrambe. <b>OR</b>: basta una. <b>NOT</b>: nega la condizione.</p>
+        </details>
+
+        <details>
+            <summary>COUNT: contare le righe</summary>
+            <pre>SELECT COUNT(*) FROM libri;</pre>
+        </details>
+
+        <details>
+            <summary>GROUP BY: raggruppare</summary>
+            <pre>SELECT genere, COUNT(*) FROM libri GROUP BY genere;</pre>
+            <p>Conta quanti libri ci sono per ogni genere.</p>
+        </details>
+
+        <details>
+            <summary>JOIN: unire due tabelle</summary>
+            <pre>SELECT libri.titolo, autori.cognome
+FROM libri
+JOIN autori ON libri.id_autore = autori.id;</pre>
+            <p>Collega le righe di due tabelle tramite una colonna in comune.</p>
+        </details>
+
+    </div>
+</div>
                     
                     
                     <!-- Schema-->
@@ -77,7 +133,7 @@
                 <nav class="buttons">
                     <button type="button" class="btn green" id="esegui">&#9658; Esegui</button>
                     <button type="button" class="btn green" id="verifica">&#10004; Verifica</button>
-                    <button type="button" class="btn"> Manuale SQL</button>
+                    <button type="button" class="btn green" id="manualeBtn"> Manuale SQL</button>
                     <button type="button" class="btn" id="schemaBtn">🛢 Schema DB</button>
                 </nav>
 

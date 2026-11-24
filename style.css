@@ -258,8 +258,20 @@ td { background: #2a0e18; }
     box-shadow: inset 0 2px 0 #9fd05a; /* riflesso in alto */
     font-size: 26px;
 }
+/* === EFFETTO CARINO TASTI=== */
+.btn {
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
 
-.btn:hover { filter: brightness(1.15); }
+.btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-3px);              /* il pulsante si solleva */
+    box-shadow: 0 6px 14px rgba(232, 176, 79, 0.5);  /* alone dorato */
+}
+
+.btn:active {
+    transform: translateY(1px);               /* si "schiaccia" quando clicchi */
+}
 
 /* === CONCETTI DEL LIVELLO === */
 .concetti {
@@ -268,6 +280,41 @@ td { background: #2a0e18; }
     border: 2px solid var(--oro);
     border-radius: 999px;
     color: var(--oro);
+}
+/* === MANUALE SQL === */
+.manualeContenuto {
+    padding: 12px;
+    max-height: 65vh;
+    overflow: auto; /* il manuale scorre dentro la finestra */
+}
+
+.manualeContenuto details {
+    margin-bottom: 10px;
+    border: 1px solid rgba(232, 176, 79, 0.4);
+    border-radius: 8px;
+    background: var(--bordeaux);
+}
+
+.manualeContenuto summary {
+    padding: 10px 14px;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--oro);
+    cursor: pointer;
+}
+
+.manualeContenuto details > *:not(summary) {
+    margin: 8px 14px;
+    font: 16px/1.4 sans-serif;
+}
+
+.manualeContenuto pre {
+    padding: 10px;
+    border-radius: 6px;
+    background: #1e1e1e;
+    color: #9fd05a;
+    font: 16px/1.4 "Fira Code", Consolas, monospace;
+    overflow-x: auto;
 }
 
 /* === SCHERMI STRETTI: una colonna === */

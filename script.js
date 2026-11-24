@@ -66,6 +66,7 @@ document.getElementById("esegui").addEventListener("click", async () => {
 const infoBox = document.getElementById("infoBox");
 const tabellaInfo = document.getElementById("tabellaInfo");
 const schemaFrame = document.getElementById("schemaFrame");
+const manualeFrame = document.getElementById("manualeFrame");
 
 document.getElementById("outputTable").addEventListener("click", () => {
   const preview = document.querySelector("#outputTable table");
@@ -73,6 +74,7 @@ document.getElementById("outputTable").addEventListener("click", () => {
   infoBox.querySelector(".resTable").innerHTML = preview.innerHTML;
   tabellaInfo.hidden = false;
   schemaFrame.hidden = true;
+  manualeFrame.hidden = true;
   infoBox.showModal();
 });
 
@@ -80,5 +82,12 @@ document.getElementById("outputTable").addEventListener("click", () => {
 document.getElementById("schemaBtn").addEventListener("click", () => {
   tabellaInfo.hidden = true;
   schemaFrame.hidden = false;
+  infoBox.showModal();
+});
+/* === MANUALE SQL === */
+document.getElementById("manualeBtn").addEventListener("click", () => {
+  tabellaInfo.hidden = true;
+  schemaFrame.hidden = true;
+  manualeFrame.hidden = false;
   infoBox.showModal();
 });
