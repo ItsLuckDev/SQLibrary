@@ -14,7 +14,7 @@
         $res = $con->query($query);
         # INSERT/UPDATE/DELETE restituiscono true, non una tabella
         echo json_encode($res === true ? ["ok" => true] : $res->fetch_all(MYSQLI_ASSOC));
-    } catch (mysqli_sql_exception $e) {
+    } catch (mysqli_sql_exception | ValueError $e) { # query vuota lancia ValueError
         # connessione fallita, query sbagliata o vuota
         echo json_encode(["errore" => $e->getMessage()]);
     }
