@@ -82,6 +82,7 @@ document.getElementById("outputTable").addEventListener("click", () => {
 document.getElementById("schemaBtn").addEventListener("click", () => {
   tabellaInfo.hidden = true;
   schemaFrame.hidden = false;
+  manualeFrame.hidden = true;
   infoBox.showModal();
 });
 /* === MANUALE SQL === */
