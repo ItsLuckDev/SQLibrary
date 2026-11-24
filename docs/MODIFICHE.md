@@ -1,8 +1,5 @@
 
-
-
-[CGIL - 23/11/26]: SCIOPERO Generale Javascript
-Durante la giornata di Venerdì 28 Novembre, le righe 27 e 35 del codice "script.js" proclameranno uno Sciopero Generale in cui non verrà assicurata la continuità dei lavori ed il funzionamento del codice per tutta la durata del giorno. Ci scusiamo per il disagio.
+[LUCA - 24/11/2026]: Sistemati i problemi dei frame e aggiunta una piccola tabella di esempio prima di eseguire una qualsiasi query in modo da dare un'idea al giocatore di come si presenta il risultato.
 
 [BZ - 22/11/26]: Aggiunta la separazione in 2 div alternabili: uno identificato come "contenutoFrame", che contiene le funzioni precedentemente create, ovvero la schermata di default.
 L'altro, contenente lo schema del DB e attivato quando viene premuto il tasto "SCHEMA DB", schemaFrame, si occupa di mostrare a schermo lo schema del DB ed il pulsante di ritorno alla schermata principale.

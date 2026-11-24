@@ -24,7 +24,7 @@ hintBtn.addEventListener("click", async () => {
   hint.textContent = "Inserire qui il suggerimento per il livello"; //da cambiare con il suggerimento restituito dal DB
   hint.style.display = "block";
 })
-//scemo chi legge
+
 /* === CLIENTE RANDOM === */
 let avatarClienti = [];
 for (let i = 1; i <= 13; i++) avatarClienti.push(`img/customers/Cliente${i}.png`);
@@ -32,7 +32,6 @@ for (let i = 1; i <= 13; i++) avatarClienti.push(`img/customers/Cliente${i}.png`
 const avatar = document.getElementById("customer");
 avatar.src = avatarClienti[Math.floor(Math.random() * avatarClienti.length)];
 
-//scemo chi legge anche qui
 /* === ESEGUI === */
 document.getElementById("esegui").addEventListener("click", async () => {
   const tabella = document.querySelector("table");
