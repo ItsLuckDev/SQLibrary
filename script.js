@@ -43,21 +43,20 @@ document.getElementById("esegui").addEventListener("click", async () => {
     body: JSON.stringify({ query: input.value.toLowerCase() })
   });
 
-  const righe = await resp.json();
+  const { colonne, righe, errore } = await resp.json();
 
   // {errore: ...} oppure {ok: true}: non è una tabella
-  if (!Array.isArray(righe)) { tabella.insertRow().insertCell().textContent = righe.errore ?? "Query eseguita"; return; }
+  if (!righe) { tabella.insertRow().insertCell().textContent = errore ?? "Query eseguita"; return; }
   if (righe.length === 0) { tabella.insertRow().insertCell().textContent = "Nessun risultato"; return; }
 
   // intestazione
-  const chiavi = Object.keys(righe[0]); // es. ["Titolo", "Autore", "Anno"]
   const intestazione = tabella.createTHead().insertRow();
-  chiavi.forEach(k => intestazione.appendChild(document.createElement("th")).textContent = k);
+  colonne.forEach(c => intestazione.appendChild(document.createElement("th")).textContent = c);
 
-  // righe della tabella
+  // righe della tabella (array di valori, nello stesso ordine di colonne)
   righe.forEach(riga => {
     const tr = tabella.insertRow(); // finisce in un <tbody> creato in automatico
-    chiavi.forEach(k => tr.insertCell().textContent = riga[k]);
+    riga.forEach(v => tr.insertCell().textContent = v);
   });
 });
 
